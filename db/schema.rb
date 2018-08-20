@@ -10,10 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_20_110507) do
+ActiveRecord::Schema.define(version: 2018_08_20_123017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "moment_id"
+    t.bigint "user_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["moment_id"], name: "index_bookings_on_moment_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "moments", force: :cascade do |t|
+    t.bigint "activity_id"
+    t.bigint "user_id"
+    t.text "description"
+    t.string "location"
+    t.integer "level"
+    t.string "start_time"
+    t.string "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_moments_on_activity_id"
+    t.index ["user_id"], name: "index_moments_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -35,10 +67,20 @@ ActiveRecord::Schema.define(version: 2018_08_20_110507) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "photo"
+    t.text "description"
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "rating"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "bookings", "moments"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "moments", "activities"
+  add_foreign_key "moments", "users"
 end
