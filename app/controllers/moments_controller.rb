@@ -1,5 +1,6 @@
 class MomentsController < ApplicationController
   def index
+    @moments = Moments.all
   end
 
   def show
