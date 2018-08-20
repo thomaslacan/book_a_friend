@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user1 = User.new(username: "alberror", first_name: "Antoine", last_name: "Duvauchelle", email: "alberror@gmail.com", password: "tamereenslip")
-user.save
+user1.save
 user2 = User.new(username: "krispies", first_name: "Bill", last_name: "Le Bottier", email: "gonzo@gmail.com", password: "tamereenslip")
-user.save
+user2.save
 user3 = User.new(username: "tony", first_name: "Tony", last_name: "Le Tigre", email: "tony@gmail.com", password: "tamereenslip")
-user.save
+user3.save
 
 activity1 = Activity.new(name: "Futsal", category: "Sport", description: "C'comme du foot, mais en salle.")
 activity1.save
