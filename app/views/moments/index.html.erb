@@ -4,7 +4,7 @@
 <div class="container">
   <ul>
     <% @moments.each do |moment| %>
-      <li><%= render 'card' %></li>
+      <li><%= render 'partials/card', moment: moment %></li>
     <% end %>
   </ul>
 </div>
