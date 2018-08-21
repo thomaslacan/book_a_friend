@@ -14,7 +14,7 @@ class MomentsController < ApplicationController
   def create
     @moment = Moment.new(moment_params)
     if @moment.save
-      redirect_to moment_path(@moment)
+      redirect_to moments_path
     else
       render :new
     end
