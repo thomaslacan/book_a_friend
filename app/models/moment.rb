@@ -9,5 +9,5 @@ class Moment < ApplicationRecord
   validates :end_time, presence: true
   validates :description, presence: true
   validates :location, presence: true
-  validates :level, presence: true, numericality: true, inclusion: {in: 1..5}
+  validates :level, presence: true
 end

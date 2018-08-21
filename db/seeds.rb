@@ -14,17 +14,17 @@ user3 = User.new(username: "tony", first_name: "Tony", last_name: "Le Tigre", em
 user3.save
 p User.all
 
-moment1 = Moment.new(category: 'Food', activity: 'activity1', user: user1, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
+moment1 = Moment.new(category: 'Food', activity: 'activity1', user: user1, description: "On va tellement s'éclater !", location: "Paris", level: 'Easy', start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
 moment1.save!
-moment2 = Moment.new(category: 'Culture', activity: 'activity2', user: user1, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
+moment2 = Moment.new(category: 'Culture', activity: 'activity2', user: user1, description: "On va tellement s'éclater !", location: "Paris", level: 'Beginner', start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
 moment2.save
-moment3 = Moment.new(category: 'Sport', activity: 'activity1', user: user2, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
+moment3 = Moment.new(category: 'Sport', activity: 'activity1', user: user2, description: "On va tellement s'éclater !", location: "Paris", level: 'Medium', start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
 moment3.save
-moment4 = Moment.new(category: 'Food', activity: 'activity2', user: user3, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
+moment4 = Moment.new(category: 'Food', activity: 'activity2', user: user3, description: "On va tellement s'éclater !", location: "Paris", level: 'Hell', start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
 moment4.save
-moment5 = Moment.new(category: 'Culture', activity: 'activity3', user: user2, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
+moment5 = Moment.new(category: 'Culture', activity: 'activity3', user: user2, description: "On va tellement s'éclater !", location: "Paris", level: 'Medium', start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
 moment5.save
-moment6 = Moment.new(category: 'Sport', activity: 'activity3', user: user3, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
+moment6 = Moment.new(category: 'Sport', activity: 'activity3', user: user3, description: "On va tellement s'éclater !", location: "Paris", level: 'Easy', start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
 moment6.save
 p Moment.all
 
