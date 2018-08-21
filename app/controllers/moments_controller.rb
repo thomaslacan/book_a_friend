@@ -32,6 +32,13 @@ class MomentsController < ApplicationController
   end
 
   def destroy
+    @moment = Moment.find(params[:id])
+    if @moment.user = current_user
+      @moment.destroy
+      redirect_to moments_path
+    else
+    render "new"
+    end
   end
 
   private
