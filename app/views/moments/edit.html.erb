@@ -1,7 +1,5 @@
 <div class="form-wrapper">
   <div class="container">
-    <h2>Add a new task</h2>
-
     <%= simple_form_for @moment do |f| %>
       <%= f.input :activity %>
       <%= f.select :category, collection: ['Sport', 'Culture', 'entertainment'] %>
@@ -16,3 +14,4 @@
     <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
   </div>
 </div>
+
