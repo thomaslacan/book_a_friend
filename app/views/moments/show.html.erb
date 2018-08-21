@@ -12,7 +12,9 @@
   <img class="user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
 <% end %>
 
-<%= link_to 'Edit Moment', edit_moment_path, :class => 'btn btn-primary' %>
 <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
+<% if @moment.user == current_user %>
+  <%= link_to 'Edit Moment', edit_moment_path, :class => 'btn btn-primary' %>
+<% end %>
 <%= link_to 'Delete this moment', moment_path, method: :delete, class: 'btn btn-danger' %>
 </div>

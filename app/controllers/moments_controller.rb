@@ -23,7 +23,13 @@ class MomentsController < ApplicationController
   end
 
   def edit
+    @user = current_user
     @moment = Moment.find(params[:id])
+    if @moment.user == @user
+      return @moment
+    else
+      render :show
+    end
   end
 
   def update
