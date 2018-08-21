@@ -17,7 +17,6 @@ class MomentsController < ApplicationController
     if @moment.save
       redirect_to moment_path(@moment)
     else
-      raise
       render :new
     end
   end
