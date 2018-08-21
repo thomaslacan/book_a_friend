@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   resources :moments do
     resources :bookings
-    resources :activites, only: [:new, :create]
   end
 
   resources :users, only: [:show, :edit, :update]
