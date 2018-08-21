@@ -1,8 +1,21 @@
 <div class="container">
-  <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
-  <%= @user.username %>
-  <%= @user.description %>
-  <%= @user.rating %>
+  <div class="user-bio">
+    <div class="show-user-img">
+      <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+    </div>
+    <div class="show-user-data">
+      <div id="show-username">
+        <%= @user.username %>
+      </div>
+      <div>
+        <%= @user.description %>
+      </div>
+      <div>
+        <%= @user.rating %>
+      </div>
+    </div>
+  </div>
+
 
   <% if @user = current_user %>
     <%= link_to "Edit your bio", edit_user_path(@user) %>
