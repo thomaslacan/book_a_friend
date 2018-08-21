@@ -40,7 +40,7 @@ class MomentsController < ApplicationController
 
   def destroy
     @moment = Moment.find(params[:id])
-    if @moment.user = current_user
+    if @moment.user == current_user
       @moment.destroy
       redirect_to moments_path
     else
