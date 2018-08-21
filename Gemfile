@@ -11,6 +11,7 @@ gem 'redis'
 gem 'devise'
 gem 'faker'
 gem 'pundit'
+gem 'momentjs-rails', '>= 2.9.0'
 
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
