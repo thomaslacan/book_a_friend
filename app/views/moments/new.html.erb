@@ -1,2 +1,20 @@
 <h1>Moments#new</h1>
 <p>Find me in app/views/moments/new.html.erb</p>
+
+<div class="container">
+
+  <h1>Add a Moment</h1>
+  <!-- <p>Find me in app/views/flats/new.html.erb</p> -->
+
+  <%= simple_form_for @moment do |f| %>
+    <%= f.input :activity_id %>
+    <%= f.input :description %>
+    <%= f.input :location %>
+    <%= f.input :level %>
+    <%= f.input :start_time %>
+    <%= f.input :end_time %>
+    <%= f.submit "add ur moment", class: "btn btn-primary" %>
+  <% end %>
+  <br>
+  <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
+</div>
