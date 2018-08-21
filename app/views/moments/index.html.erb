@@ -1,3 +1,8 @@
-<% @moments.each do |moment| %>
-  <%= render 'card', moment: moment %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% @moments.each do |moment| %>
+      <%= render 'card', moment: moment %>
+    <% end %>
+  </div>
+</div>
+
