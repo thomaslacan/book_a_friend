@@ -33,6 +33,6 @@ class MomentsController < ApplicationController
   private
 
   def moment_params
-    params.require(:moment).permit(:activity_id, :user_id, :description, :location, :level, :start_time, :end_time)
+    params.require(:moment).permit(:category, :activity, :user_id, :description, :location, :level, :start_time, :end_time)
   end
 end
