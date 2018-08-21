@@ -6,7 +6,8 @@ class Moment < ApplicationRecord
 
   validates :activity, presence: true
   validates :user, presence: true
-  validates :time, presence: true
+  validates :start_time, presence: true
+  validates :end_time, presence: true
   validates :description, presence: true
   validates :location, presence: true
   validates :level, presence: true, numericality: true, inclusion: {in: 1..5}

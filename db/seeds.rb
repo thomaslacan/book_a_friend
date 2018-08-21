@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+j# This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
@@ -20,20 +20,20 @@ activity2.save
 activity3 = Activity.new(name: "Bowling", category: "Entertainment", description: "Ca va striker !")
 activity3.save
 
-moment1 = Moment.new(activity: 1, user: 1, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
-moment1.save
-moment2 = Moment.new(activity: 2, user: 1, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
+moment1 = Moment.new(activity: activity1, user: user1, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
+moment1.save!
+moment2 = Moment.new(activity: activity2, user: user1, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
 moment2.save
-moment3 = Moment.new(activity: 1, user: 2, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
+moment3 = Moment.new(activity: activity1, user: user2, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
 moment3.save
-moment4 = Moment.new(activity: 2, user: 3, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
+moment4 = Moment.new(activity: activity2, user: user3, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
 moment4.save
-moment5 = Moment.new(activity: 3, user: 2, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
+moment5 = Moment.new(activity: activity3, user: user2, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
 moment5.save
-moment6 = Moment.new(activity: 3, user: 3, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
+moment6 = Moment.new(activity: activity3, user: user3, description: "On va tellement s'éclater !", location: "Paris", level: 3, start_time: "01.09.2018 00:00", end_time: "01.09/2018 13.00")
 moment6.save
 
-booking1 = Booking.new(moment: 1, user: 2, description: "Tain j'ai trop hâte.")
+booking1 = Booking.new(moment: moment1, user: user2, description: "Tain j'ai trop hâte.")
 booking1.save
-booking2 = Booking.new(moment: 3, user: 3, description: "Trop cool, samedi en plus j'aurai bien dormi")
+booking2 = Booking.new(moment: moment3, user: user3, description: "Trop cool, samedi en plus j'aurai bien dormi")
 booking2.save
