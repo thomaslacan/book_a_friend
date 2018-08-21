@@ -13,6 +13,8 @@
 <% end %>
 
 <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
+<%= link_to 'Bookings', moment_bookings_path(@moment), class: 'btn btn-success' %>
+<%= link_to 'Join This Moment', new_moment_booking_path(@moment) %>
 <% if @moment.user == current_user %>
   <%= link_to 'Edit Moment', edit_moment_path, :class => 'btn btn-primary' %>
   <%= link_to 'Delete this moment', moment_path, method: :delete, class: 'btn btn-danger' %>

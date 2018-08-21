@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_params, only: [:show]
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(moment_id: params[:moment_id].to_i)
   end
 
   def show
@@ -9,12 +9,17 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @moment = Moment.find(params[:moment_id])
     @booking = Booking.new
   end
 
   def create
-    @booking = Booking.create(@booking_params)
-    redirect_to bookings_path
+    @moment = Moment.find(params[:moment_id])
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.moment = @moment
+    @booking.save
+    redirect_to moment_path(@moment)
   end
 
   def edit
@@ -28,7 +33,7 @@ class BookingsController < ApplicationController
 
   private
 
-  def set_params
-  @booking_params = params.require(:booking).permit(:moment_id, :user_id, :description)
+  def booking_params
+    params.require(:booking).permit(:moment_id, :user_id, :description)
   end
 end
