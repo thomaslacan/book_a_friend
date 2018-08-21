@@ -9,7 +9,7 @@
         <p><%= moment.location %></p>
         <p><%= moment.level %></p>
       </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+      <%= cl_image_tag moment.user.photo %>
       <a class="card-link" href="#" ></a>
       <%= link_to 'Details', moment_path(moment), class: 'btn btn-primary' %>
     </div>
