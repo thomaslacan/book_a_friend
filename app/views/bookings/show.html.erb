@@ -1,2 +1,16 @@
 <h1>Bookings#show</h1>
 <p>Find me in app/views/bookings/show.html.erb</p>
+
+<div class="container">
+
+  <% @booking %>
+    <%= @booking.description %>
+    <%= @booking.moment_id.description %>
+    <%= @booking.user_id.username %>
+    <%= @user.rating %>
+
+<% end %>
+
+link_to "Back to bookings", booking_path
+
+</div>

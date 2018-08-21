@@ -10,18 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_20_123017) do
+ActiveRecord::Schema.define(version: 2018_08_21_084411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "activities", force: :cascade do |t|
-    t.string "name"
-    t.string "category"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "moment_id"
@@ -34,7 +26,6 @@ ActiveRecord::Schema.define(version: 2018_08_20_123017) do
   end
 
   create_table "moments", force: :cascade do |t|
-    t.bigint "activity_id"
     t.bigint "user_id"
     t.text "description"
     t.string "location"
@@ -43,7 +34,8 @@ ActiveRecord::Schema.define(version: 2018_08_20_123017) do
     t.string "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["activity_id"], name: "index_moments_on_activity_id"
+    t.string "activity"
+    t.string "category"
     t.index ["user_id"], name: "index_moments_on_user_id"
   end
 
@@ -81,6 +73,5 @@ ActiveRecord::Schema.define(version: 2018_08_20_123017) do
 
   add_foreign_key "bookings", "moments"
   add_foreign_key "bookings", "users"
-  add_foreign_key "moments", "activities"
   add_foreign_key "moments", "users"
 end

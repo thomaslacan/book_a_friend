@@ -1,5 +1,4 @@
 class Moment < ApplicationRecord
-  belongs_to :activity
   belongs_to :user
 
   has_many :bookings
