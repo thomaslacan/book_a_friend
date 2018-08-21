@@ -1,2 +1,17 @@
+<div class="container">
+
 <h1>Moments#show</h1>
 <p>Find me in app/views/moments/show.html.erb</p>
+
+<ul>
+  <li><%= @moment.category %></li>
+  <li><%= @moment.activity %></li>
+  <li><%= @moment.description %></li>
+  <li><%= @moment.location %></li>
+  <li><%= @moment.start_time %></li>
+  <li><%= @moment.end_time %></li>
+</ul>
+
+<%= link_to 'Edit Moment', edit_moment_path, :class => 'btn btn-primary' %>
+<%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
+</div>

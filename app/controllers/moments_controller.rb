@@ -14,17 +14,20 @@ class MomentsController < ApplicationController
   def create
     @moment = Moment.new(moment_params)
     if @moment.save
-      redirect_to moments_path
+      redirect_to moment_path(@moment)
     else
       render :new
     end
   end
 
   def edit
-
+    @moment = Moment.find(params[:id])
   end
 
   def update
+    @moment = Moment.find(params[:id])
+    @moment.update(moment_params)
+    redirect_to moment_path(@moment)
   end
 
   def destroy

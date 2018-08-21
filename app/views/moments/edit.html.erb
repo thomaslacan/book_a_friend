@@ -1,2 +1,19 @@
 <h1>Moments#edit</h1>
 <p>Find me in app/views/moments/edit.html.erb</p>
+
+<div class="container">
+  <h2>Add a new task</h2>
+
+  <%= simple_form_for @moment do |f| %>
+    <%= f.input :activity %>
+    <%= f.input :category %>
+    <%= f.input :description %>
+    <%= f.input :location %>
+    <%= f.input :level %>
+    <%= f.input :start_time %>
+    <%= f.input :end_time %>
+    <%= f.submit "Update Moment", class: "btn btn-primary" %>
+  <% end %>
+  <br>
+  <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
+</div>
