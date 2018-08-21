@@ -1,19 +1,18 @@
-<h1>Moments#edit</h1>
-<p>Find me in app/views/moments/edit.html.erb</p>
+<div class="form-wrapper">
+  <div class="container">
+    <h2>Add a new task</h2>
 
-<div class="container">
-  <h2>Add a new task</h2>
-
-  <%= simple_form_for @moment do |f| %>
-    <%= f.input :activity %>
-    <%= f.select :category, collection: ['Sport', 'Culture', 'entertainment'] %>
-    <%= f.input :description %>
-    <%= f.input :location %>
-    <%= f.select :level, collection: ['Beginner', 'Easy', 'Average', 'Hard', 'Hell'] %>
-    <%= f.input :start_time %>
-    <%= f.input :end_time %>
-    <%= f.submit "Update Moment", class: "btn btn-primary" %>
-  <% end %>
-  <br>
-  <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
+    <%= simple_form_for @moment do |f| %>
+      <%= f.input :activity %>
+      <%= f.select :category, collection: ['Sport', 'Culture', 'entertainment'] %>
+      <%= f.input :description %>
+      <%= f.input :location %>
+      <%= f.select :level, collection: ['Beginner', 'Easy', 'Average', 'Hard', 'Hell'] %>
+      <%= f.input :start_time %>
+      <%= f.input :end_time %>
+      <%= f.submit "Update Moment", class: "btn btn-primary" %>
+    <% end %>
+    <br>
+    <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
+  </div>
 </div>
