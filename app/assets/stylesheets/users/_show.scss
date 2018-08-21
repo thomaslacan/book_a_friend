@@ -1,0 +1,23 @@
+.user-bio {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+    align-items: center;
+}
+
+.show-user-img img {
+  width: 360px;
+  height: 360px;
+  border-radius: 50px;
+}
+
+.show-user-data {
+  padding: 50px;
+  max-width: 360px;
+}
+
+#show-username {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
