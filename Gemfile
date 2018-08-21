@@ -11,6 +11,7 @@ gem 'redis'
 gem 'devise'
 gem 'faker'
 gem 'pundit'
+gem 'momentjs-rails', '>= 2.9.0'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
