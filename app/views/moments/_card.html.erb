@@ -5,7 +5,7 @@
         Activity Category
       </div>
       <div class="card-description">
-        <p><%= moment.description %></p>
+        <p><%= moment.description.truncate(50, separator: /\s/) %></p>
         <p><%= moment.location %></p>
         <p><%= moment.level %></p>
       </div>
