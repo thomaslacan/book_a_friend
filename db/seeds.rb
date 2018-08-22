@@ -1,12 +1,12 @@
-user1 = User.new(username: "alberror", first_name: "Antoine", last_name: "Duvauchelle", email: "alberror@gmail.com", password: "mdpmdp", photo: "o9bkepgtzkfmlbir17pw")
+user1 = User.new(username: "alberror", first_name: "Antoine", last_name: "Duvauchelle", email: "alberror@gmail.com", password: "mdpmdp", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1534943774/yiqzxkbceyioxzdaazoq.jpg")
 user1.save
-user2 = User.new(username: "coluche", first_name: "Michel", last_name: "Colucci", email: "coluche@gmail.com", password: "mdpmdp", photo: "z4uvessihtzs8jfmgwgq")
+user2 = User.new(username: "coluche", first_name: "Michel", last_name: "Colucci", email: "coluche@gmail.com", password: "mdpmdp", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1534939959/z4uvessihtzs8jfmgwgq.jpg")
 user2.save
-user3 = User.new(username: "dodo", first_name: "Dodo", last_name: "La Saumure", email: "dodo@gmail.com", password: "mdpmdp", photo: "mazj78iumuzfbgprfkyg")
+user3 = User.new(username: "dodo", first_name: "Dodo", last_name: "La Saumure", email: "dodo@gmail.com", password: "mdpmdp", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1534939990/mazj78iumuzfbgprfkyg.jpg")
 user3.save
-user4 = User.new(username: "franck", first_name: "Franck", last_name: "Ribery", email: "franck@gmail.com", password: "mdpmdp", photo: "xp1zx697yvn3r9pschnx")
+user4 = User.new(username: "franck", first_name: "Franck", last_name: "Ribery", email: "franck@gmail.com", password: "mdpmdp", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1534939973/xp1zx697yvn3r9pschnx.png")
 user4.save
-user5 = User.new(username: "zahia", first_name: "Zahia", last_name: "Dehar", email: "zahia@gmail.com", password: "mdpmdp", photo: "papewzhhvfjw3dg2fw6s")
+user5 = User.new(username: "zahia", first_name: "Zahia", last_name: "Dehar", email: "zahia@gmail.com", password: "mdpmdp", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1534939983/papewzhhvfjw3dg2fw6s.jpg")
 user5.save
 p User.all
 
