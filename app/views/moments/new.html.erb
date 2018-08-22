@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="test-container">
-  <div class="form-container">
+  <div class="form-layout-container">
+   <div class="form-container">
     <div class="form-content">
     <h1>Add a Moment</h1>
       <%= simple_form_for @moment do |f| %>
@@ -14,8 +14,8 @@
         <%= f.submit "add ur moment", class: "btn btn-primary" %>
         <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
       <% end %>
+     </div>
     </div>
-  </div>
   </div>
 </div>
 
