@@ -23,7 +23,7 @@
         <% if @moment.user.photo.file.nil?%>
           <%= image_tag "avatar-baf.png", height: 100, width: 100, class: "img-circle" %>
         <% else %>
-          <%= cl_image_tag @user.photo, height: 100, width: 100, crop: :fill, class: "img-circle" %>
+          <%= cl_image_tag @moment.user.photo, height: 100, width: 100, crop: :fill, class: "img-circle" %>
         <% end %>
       <% end %>
     </div>
