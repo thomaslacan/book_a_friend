@@ -9,15 +9,23 @@
   width: 360px;
   height: 360px;
   border-radius: 50px;
+  align-items: center;
 }
 
 .show-user-data {
   padding: 50px;
   max-width: 360px;
+  align-items: center;
 }
 
 #show-username {
   font-size: 24px;
   font-weight: bold;
   padding-bottom: 10px;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
 }
