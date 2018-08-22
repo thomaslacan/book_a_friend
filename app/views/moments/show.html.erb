@@ -1,32 +1,43 @@
-<div class="container">
-  <div class="moment-main-info">
-    <ul>
-      <li><%= @moment.category %></li>
-      <li><%= @moment.activity %></li>
-      <li><%= @moment.description %></li>
-      <li><%= @moment.location %></li>
-    </ul>
+<div class="moment-wrapper">
+  <div class="container moment-container">
+    <div class="moment-main-info">
+      <ul>
+        <li class="category-moment"><%= @moment.category %></li>
+        <li><h1><%= @moment.activity %></h1></li>
+        <li><%= @moment.description %></li>
+        <li><i class="fas fa-map-marker"></i> <%= @moment.location %></li>
+      </ul>
+    </div>
+    <div class="moment-date">
+      <ul>
+        <li>
+          Starting on <%= @formatted_start %>
+        </li>
+        <li>
+          Ending on <%= @formatted_end %>
+        </li>
+      </ul>
+    </div>
+    <div class="moment-user-img">
+      <%= link_to user_path(@moment.user) do %>
+        <% if @moment.user.photo.file.nil?%>
+          <%= image_tag "avatar-baf.png", height: 100, width: 100, class: "img-circle" %>
+        <% else %>
+          <%= cl_image_tag @user.photo, height: 100, width: 100, crop: :fill, class: "img-circle" %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-  <div class="moment-date">
-    <ul>
-      <li>
-        Starting on <%= @formatted_start %>
-      </li>
-      <li>
-        Ending on <%= @formatted_end %>
-      </li>
-    </ul>
+  <div class="container">
+    <div class="nav-buttons-show">
+      <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
+      <%= link_to 'Bookings', moment_bookings_path(@moment), class: 'btn btn-success' %>
+      <%= link_to 'Join This Moment', new_moment_booking_path(@moment), class: "btn btn-danger" %>
+      <% if @moment.user == current_user %>
+        <%= link_to 'Edit Moment', edit_moment_path, :class => 'btn btn-primary' %>
+        <%= link_to 'Delete this moment', moment_path, method: :delete, class: 'btn btn-danger' %>
+      <% end %>
+    </div>
   </div>
-
-<%= link_to user_path(@moment.user_id) do %>
-  <img class="user" src="assets/images/moment.photo.jpg">
-<% end %>
-
-<%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
-<%= link_to 'Bookings', moment_bookings_path(@moment), class: 'btn btn-success' %>
-<%= link_to 'Join This Moment', new_moment_booking_path(@moment) %>
-<% if @moment.user == current_user %>
-  <%= link_to 'Edit Moment', edit_moment_path, :class => 'btn btn-primary' %>
-  <%= link_to 'Delete this moment', moment_path, method: :delete, class: 'btn btn-danger' %>
-<% end %>
 </div>
+
