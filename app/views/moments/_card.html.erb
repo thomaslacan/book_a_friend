@@ -6,7 +6,7 @@
       </div>
       <div class="card-description">
         <ul class="list-unstyled">
-          <li><%= moment.description %></li>
+          <li><%= truncate(moment.description, length: 35) %></li>
           <li>Location: <%= moment.location %></li>
         </ul>
       </div>
