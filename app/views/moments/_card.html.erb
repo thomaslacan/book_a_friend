@@ -1,8 +1,12 @@
+<% url =  moment.category.downcase << ".jpg" %>
+
 <div class="col-xs-12 col-sm-6 col-md-4">
-  <div class="card grow" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(/assets/images/moment.photo.jpg);">
+  <div class="card grow" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('cinema');">
     <div class="card-content">
       <div class="card-category">
         <%= moment.category %> <span>(<%= moment.level %>)</span>
+
+
       </div>
       <div class="card-description">
         <ul class="list-unstyled">

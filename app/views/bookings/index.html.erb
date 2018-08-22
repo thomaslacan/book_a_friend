@@ -3,6 +3,7 @@
   <h2>All the bookings for this moment</h2>
   <ul class="list-unstyled">
     <% @bookings.each do |booking| %>
+    name
      <li> <%= booking.user.username %> </li>
     <% end %>
   </ul>
