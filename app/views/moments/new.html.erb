@@ -1,21 +1,22 @@
 
 <div class="container">
-
-  <h1>Add a Moment</h1>
-  <!-- <p>Find me in app/views/flats/new.html.erb</p> -->
-
-  <%= simple_form_for @moment do |f| %>
-    <%= f.input :activity %>
-    <%= f.select :category, collection: ['Sport', 'Culture', 'entertainment'] %>
-    <%= f.input :description %>
-    <%= f.input :location %>
-    <%= f.select :level, collection: ['Beginner', 'Easy', 'Average', 'Hard', 'Hell'] %>
-    <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-    <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-    <%= f.submit "add ur moment", class: "btn btn-primary" %>
-  <% end %>
-  <br>
-  <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
+  <div class="form-container">
+    <div class="form-content">
+      <h1>Add a Moment</h1>
+    <!-- <p>Find me in app/views/flats/new.html.erb</p> -->
+    <%= simple_form_for @moment do |f| %>
+      <%= f.input :activity %>
+      <%= f.select :category, collection: ['Sport', 'Culture', 'entertainment'] %>
+      <%= f.input :description %>
+      <%= f.input :location %>
+      <%= f.select :level, collection: ['Beginner', 'Easy', 'Average', 'Hard', 'Hell'] %>
+      <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.submit "add ur moment", class: "btn btn-primary" %>
+      <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
+    <% end %>
+    </div>
+  </div>
 </div>
 
 

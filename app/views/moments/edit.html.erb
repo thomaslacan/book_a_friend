@@ -1,5 +1,7 @@
 <div class="form-wrapper">
   <div class="container">
+    <div class="form-container">
+      <div class="form-content">
     <%= simple_form_for @moment do |f| %>
       <%= f.input :activity %>
       <%= f.select :category, collection: ['Sport', 'Culture', 'entertainment'] %>
@@ -9,9 +11,10 @@
       <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.submit "Update Moment", class: "btn btn-primary" %>
+      <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
     <% end %>
-    <br>
-    <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
+      </div>
+    </div>
   </div>
 </div>
 
