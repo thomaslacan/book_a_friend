@@ -1,38 +1,39 @@
 <div class="container">
   <div class="user-bio">
     <div class="show-user-img">
+      <div id="show-username">
+    <%= @user.first_name %> <%= @user.last_name %>
+  </div>
       <% if @user.photo.file.nil?%>
         <%= image_tag "avatar-baf.png" %>
       <% else %>
-        <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag @user.photo, height: 300, width: 300, crop: :fill, class: "img-circle" %>
       <% end %>
     </div>
     <div class="show-user-data">
-      <div id="show-username">
-        <%= @user.username %>
-      </div>
       <div>
+        <h2>About me:</h2>
         <%= @user.description %>
       </div>
       <div>
         <%= @user.rating %>
       </div>
+      <h3>My next activities:</h3>
+      <ul>
+        <% @bookings.each do |booking| %>
+          <li>Activity: <%= booking.moment.activity %> </li>
+          <li>Description: <%= booking.moment.description %> </li>
+          <li>Location: <%= booking.moment.location %> </li>
+          <%= link_to 'Delete Booking', moment_booking_path(booking.moment, booking), method: :delete %>
+          <hr>
+        <% end %>
+      </ul>
+      <% if @user == current_user %>
+        <%= link_to "Edit your bio", edit_user_path(@user) %>
+      <% end %>
     </div>
   </div>
-
-<ul>
-  <% @bookings.each do |booking| %>
-    <li>Activity: <%= booking.moment.activity %> </li>
-    <li>Description: <%= booking.moment.description %> </li>
-    <li>Location: <%= booking.moment.location %> </li>
-    <%= link_to 'Delete Booking', moment_booking_path(booking.moment, booking), method: :delete %>
-  <% end %>
-</ul>
-
-
-  <% if @user == current_user %>
-    <%= link_to "Edit your bio", edit_user_path(@user) %>
-  <% end %>
+</div>
 
   <%= link_to "Back to moment", moment_path %>
 </div>
