@@ -1,16 +1,23 @@
 <div class="col-xs-12 col-sm-6 col-md-4">
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+  <div class="card grow" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(/assets/images/moment.photo.jpg);">
     <div class="card-content">
       <div class="card-category">
-        Activity Category
+        <%= moment.category %> <span>(<%= moment.level %>)</span>
       </div>
       <div class="card-description">
+<<<<<<< HEAD
         <p><%= moment.description.truncate(50, separator: /\s/) %></p>
         <p><%= moment.location %></p>
         <p><%= moment.level %></p>
+=======
+        <ul class="list-unstyled">
+          <li><%= truncate(moment.description, length: 35) %></li>
+          <li>Location: <%= moment.location %></li>
+        </ul>
+>>>>>>> ef599c144f4b4a1a3475133bd82b1e572337c482
       </div>
       <a class="card-link" href="#" ></a>
-      <%= link_to 'Details', moment_path(moment), class: 'btn btn-primary' %>
+      <%= link_to 'Details', moment_path(moment), class: 'btn btn-default' %>
     </div>
   </div>
 </div>

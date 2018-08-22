@@ -1,23 +1,24 @@
 .user-bio {
     display: flex;
     justify-content: space-around;
-    margin: 40px 0;
     align-items: center;
-}
-
-.show-user-img img {
-  width: 360px;
-  height: 360px;
-  border-radius: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
 .show-user-data {
-  padding: 50px;
-  max-width: 360px;
+  padding: 20px 40px;
+  max-width: 600px;
+  background-color: #fff;
 }
+
+.show-user-data ul {
+    list-style: none;
+  }
 
 #show-username {
   font-size: 24px;
   font-weight: bold;
-  padding-bottom: 10px;
+  padding: 10px;
 }
