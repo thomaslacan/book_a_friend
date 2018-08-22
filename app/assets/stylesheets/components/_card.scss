@@ -44,6 +44,12 @@
   font-size: 0.7em;
 }
 
+.card-avatar {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
 .grow { transition: all .2s ease-in-out; }
 .grow:hover {
   transform: scale(1.07);
