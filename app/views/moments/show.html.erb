@@ -1,22 +1,31 @@
-<div class="container">
-<ul>
-  <li><%= @moment.category %></li>
-  <li><%= @moment.activity %></li>
-  <li><%= @moment.description %></li>
-  <li><%= @moment.location %></li>
-  <li><%= @moment.start_time %></li>
-  <li><%= @moment.end_time %></li>
-</ul>
-
-<%= link_to user_path(@moment.user_id) do %>
+<div>
+  <%= link_to user_path(@moment.user_id) do %>
   <img class="user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-<% end %>
-
-<%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
-<%= link_to 'Bookings', moment_bookings_path(@moment), class: 'btn btn-success' %>
-<%= link_to 'Join This Moment', new_moment_booking_path(@moment) %>
-<% if @moment.user == current_user %>
-  <%= link_to 'Edit Moment', edit_moment_path, :class => 'btn btn-primary' %>
-  <%= link_to 'Delete this moment', moment_path, method: :delete, class: 'btn btn-danger' %>
-<% end %>
+  <% end %>
 </div>
+<div class="activity_description">
+  <p>Category:
+    <%= @moment.category %>
+  </p>
+  <p>Category:
+    <%= @moment.activity.truncate(18, separator: /\s/) %>
+  </p>
+  <p>Description:
+    <%= @moment.description.truncate(60, separator: /\s/) %>
+  </p>
+  <p>Location:
+    <%= @moment.location %>
+  </p>
+  <p>From:
+    <%= @moment.start_time %>h, To:
+    <%= @moment.end_time %>h </p>
+  </div>
+  <div class="activity_buttons">
+    <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
+    <%= link_to 'Bookings', moment_bookings_path(@moment), class: 'btn btn-success' %>
+    <%= link_to 'Join This Moment', new_moment_booking_path(@moment), class: 'btn btn-info' %>
+    <% if @moment.user == current_user %>
+    <%= link_to 'Edit Moment', edit_moment_path, :class => 'btn btn-primary' %>
+    <%= link_to 'Delete this moment', moment_path, method: :delete, class: 'btn btn-danger' %>
+    <% end %>
+  </div>
