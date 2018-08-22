@@ -1,7 +1,11 @@
 <div class="container">
   <div class="user-bio">
     <div class="show-user-img">
-      <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+      <% if @user.photo.file.nil?%>
+        <%= image_tag "avatar-baf.png" %>
+      <% else %>
+        <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+      <% end %>
     </div>
     <div class="show-user-data">
       <div id="show-username">

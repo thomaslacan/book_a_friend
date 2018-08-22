@@ -2,7 +2,7 @@
   <div class="container">
     <%= simple_form_for @moment do |f| %>
       <%= f.input :activity %>
-      <%= f.select :category, collection: ['Sport', 'Culture', 'entertainment'] %>
+      <%= f.select :category, collection: ['Cinema', 'Concert', 'Drink', 'Exposure', 'Food', 'Games', 'Shopping', 'Sport', 'Travel', 'Visit'] %>
       <%= f.input :description %>
       <%= f.input :location %>
       <%= f.select :level, collection: ['Beginner', 'Easy', 'Average', 'Hard', 'Hell'] %>

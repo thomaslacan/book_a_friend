@@ -7,9 +7,8 @@
   <li><%= @moment.start_time %></li>
   <li><%= @moment.end_time %></li>
 </ul>
-
 <%= link_to user_path(@moment.user_id) do %>
-  <img class="user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+  <img class="user" src="assets/images/moment.photo.jpg">
 <% end %>
 
 <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
