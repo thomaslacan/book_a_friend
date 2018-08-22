@@ -2,10 +2,11 @@
   position: relative;
   margin: 10px;
   border-radius: 5px;
+  height: 200px;
 }
 
 .card-content {
-  padding: 10px;
+  padding: 3px;
 }
 
 .card-user {
@@ -20,4 +21,30 @@
 .card-category {
   color: #fff;
   font-size: 24px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
+
+.card .btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.card-description {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  color: white;
+  font-size: 0.8em;
+}
+
+.card span {
+  font-size: 0.7em;
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover {
+  transform: scale(1.07);
+ }
