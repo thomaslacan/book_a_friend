@@ -9,33 +9,28 @@
   align-items: center;
   justify-content: space-between;
 }
-
-/* Logo */
+ /* Logo */
 .logo img {
   height: 50px;
 }
-
-/* User Avatar */
+ /* User Avatar */
 .navbar-wagon .avatar {
   height: 35px;
   width: 35px;
   border-radius: 50%;
 }
-
-/* Right section */
+ /* Right section */
 .navbar-wagon-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-/* Basic navbar item */
+ /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
 }
-
-/* Navbar link */
+ /* Navbar link */
 .navbar-wagon-link {
   color: #616668;
   font-size: 14px;
@@ -44,8 +39,7 @@
   color: #da552f;
   text-decoration: none;
 }
-
-/* Dropdown menu */
+ /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
