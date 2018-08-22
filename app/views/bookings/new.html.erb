@@ -1,2 +1,13 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+
+<div class="container">
+
+  <h1>Join This Moment</h1>
+  <!-- <p>Find me in app/views/flats/new.html.erb</p> -->
+
+  <%= simple_form_for [@moment, @booking] do |f| %>
+    <%= f.input :description %>
+    <%= f.submit "Join", class: "btn btn-success" %>
+  <% end %>
+  <br>
+  <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
+</div>
