@@ -1,12 +1,23 @@
 <div class="container">
-<ul>
-  <li><%= @moment.category %></li>
-  <li><%= @moment.activity %></li>
-  <li><%= @moment.description %></li>
-  <li><%= @moment.location %></li>
-  <li><%= @moment.start_time %></li>
-  <li><%= @moment.end_time %></li>
-</ul>
+  <div class="moment-main-info">
+    <ul>
+      <li><%= @moment.category %></li>
+      <li><%= @moment.activity %></li>
+      <li><%= @moment.description %></li>
+      <li><%= @moment.location %></li>
+    </ul>
+  </div>
+  <div class="moment-date">
+    <ul>
+      <li>
+        Starting on <%= @formatted_start %>
+      </li>
+      <li>
+        Ending on <%= @formatted_end %>
+      </li>
+    </ul>
+  </div>
+
 
 <%= link_to user_path(@moment.user_id) do %>
   <img class="user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">

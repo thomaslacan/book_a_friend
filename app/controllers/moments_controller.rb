@@ -6,6 +6,8 @@ class MomentsController < ApplicationController
 
   def show
     @moment = Moment.find(params[:id])
+    @formatted_start = DateTime.parse(@moment.start_time).strftime('%A %d %B at %H:%M')
+    @formatted_end = DateTime.parse(@moment.end_time).strftime('%A %d %B at %H:%M')
   end
 
   def new
