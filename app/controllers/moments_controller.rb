@@ -17,6 +17,7 @@ class MomentsController < ApplicationController
   def create
     @moment = Moment.new(moment_params)
     @moment.user = current_user
+    @moment.photo = "#{@moment.category.downcase}.jpg"
     if @moment.save
       redirect_to moment_path(@moment)
     else
