@@ -4,10 +4,14 @@
 <div class="container">
 
   <% @booking %>
+
     <%= @booking.description %>
     <%= @booking.moment_id.description %>
     <%= @booking.user_id.username %>
     <%= @user.rating %>
+    <%= image_tag @string_photo_url, alt: "alttext" %>
+
+
 
 <% end %>
 
