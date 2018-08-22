@@ -2,6 +2,12 @@ class UsersController < ApplicationController
   before_action :set_user, only: [ :show, :edit, :update ]
 
   def show
+    @user = User.find(params[:id])
+    if @user == current_user
+      @bookings = Booking.where(user_id: @user.id)
+    else
+      @bookings = Array.new
+    end
   end
 
   def edit
