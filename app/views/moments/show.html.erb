@@ -6,9 +6,9 @@
         <div id="moment-user-img">
           <%= link_to user_path(@moment.user) do %>
             <% if @moment.user.photo.file.nil?%>
-              <%= image_tag "avatar-baf.png", height: 120, width: 120, class: "img-circle" %>
+              <%= image_tag "avatar-baf.png", height: 80, width: 80, class: "img-circle" %>
             <% else %>
-              <%= cl_image_tag @moment.user.photo, height: 120, width: 120, crop: :fill, class: "img-circle" %>
+              <%= cl_image_tag @moment.user.photo, height: 80, width: 80, crop: :fill, class: "img-circle" %>
             <% end %>
           <% end %>
         </div>
@@ -22,9 +22,20 @@
         </div>
       </div>
       <!-- Button trigger modal -->
-      <button type="button" id="img-join" data-toggle="modal" data-target="#joinModal">
-        Join this moment
-      </button>
+      <% if @moment.user != current_user %>
+        <button type="button" id="img-join" data-toggle="modal" data-target="#joinModal">
+          Join this moment
+        </button>
+      <% end %>
+      <div class="moment-messages">
+        <h4>Check who's in</h4>
+        <hr>
+        <% @moment.bookings.each do |booking| %>
+          <div class="one-message">
+            <span class="booking-description"><%= booking.description %></span> - <span class="booking-user"><%= booking.user.first_name %></span>
+          </div>
+        <% end %>
+      </div>
     </div>
     <div id="moment-content">
       <div id="moment-user-content">
@@ -44,7 +55,7 @@
           <div class="moment-user-insides" id="moment-location">
             <i class="fas fa-map-marker"></i> <%= @moment.location %>
           </div>
-          <div id="map" style="width: 100%; height: 200px;" data-markers="<%= @markers.to_json %>"></div>
+          <div id="map" style="width: 400px; height: 200px;" data-markers="<%= @markers.to_json %>"></div>
         </div>
         <div class="moment-user-insides" id="moment-date">
           <div id="moment-start">
@@ -69,7 +80,7 @@
         <h4 class="modal-title">Join this moment</h4>
       </div>
       <div class="modal-body">
-        <% if @moment.user_id != current_user.id %>
+        <% if @moment.user != current_user %>
           <div class="form-container">
             <div class="form-content">
               <%= simple_form_for [@moment, @booking] do |f| %>

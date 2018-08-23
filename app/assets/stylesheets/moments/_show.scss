@@ -9,6 +9,14 @@
   position: relative;
 }
 
+#moment-category {
+  width: 450px;
+}
+
+.one-booking {
+  display: inline;
+}
+
 #img-img>img {
   width: 450px;
   height: 300px;
@@ -52,6 +60,7 @@
   font-weight: 700;
   font-size: 32px;
   margin: 48px auto;
+  border: 0px solid black;
 }
 
 #img-join:hover {
@@ -110,4 +119,42 @@
   border: 0px solid black;
   width: 80%;
   margin: 0 auto;
+}
+
+.moment-messages {
+  margin: 20px 0;
+  width: 100%;
+  border-radius: 25px;
+}
+
+.moment-messages hr {
+  width: 90%;
+}
+
+.moment-messages h4 {
+  padding: 10px 20px 0px 20px;
+}
+
+.one-message {
+  margin: 30px auto;
+  padding: 20px;
+  border-bottom: 1px solid #f3f3f3;
+  width: 80%;
+}
+
+.one-message:hover {
+  cursor: pointer;
+  background: linear-gradient(to bottom right, #085078, #85D8CE);
+  color: #fff;
+  border-radius: 5px;
+  border-bottom: 0px solid #000;
+  opacity: 0.8;
+}
+
+.booking-description {
+  font-weight: 300;
+}
+
+.booking-user {
+  font-weight: 700;
 }
