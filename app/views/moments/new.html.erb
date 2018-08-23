@@ -3,7 +3,6 @@
     <div class="form-layout-container">
      <div class="form-container-new">
       <div class="form-content">
-      <h1>Add a Moment</h1>
         <%= simple_form_for @moment do |f| %>
           <%= f.input :activity %>
           <%= f.select :category, collection: ['Cinema', 'Concert', 'Drink', 'Exhibition', 'Food', 'Games', 'Shopping', 'Sport', 'Travel', 'Visit'] %>

@@ -23,15 +23,18 @@
   margin-bottom: 30px;
 }
 
-.form-control {
-  height: 60px;
-  width: 60%;
-  margin: 30px auto;
+#form-start {
+  height: 60px!important;
+  background-color: transparent!important;
+  width: 460px!important;
+  border-radius: 5px!important;
+  margin-right: 10px!important;
+  color: #fff!important;
 }
 
 .btn-search {
   height: 60px;
-  width: 20%;
+  width: 200px;
   background-color: #308EDC;
   color: #fff;
   font-size: 24px;
@@ -39,9 +42,21 @@
   border: 0px solid black;
   border-radius: 5px;
   opacity: 0.8;
+  margin-left: 10px;
 }
 
 .btn-search:hover {
   opacity: 1;
 }
 
+.banner-content {
+  margin-top: 50px;
+}
+
+#form-form {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
