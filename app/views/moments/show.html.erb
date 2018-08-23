@@ -1,66 +1,78 @@
-<div class="moment-wrapper">
-  <div class="container moment-container">
-    <div class="moment-main-info">
-      <ul>
-        <li class="category-moment"><%= @moment.category %></li>
-        <li><h1><%= @moment.activity %></h1></li>
-        <li><%= @moment.description %></li>
-        <li><i class="fas fa-map-marker"></i> <%= @moment.location %></li>
-      </ul>
-    </div>
-    <div class="moment-date">
-      <ul>
-        <li>
-          Starting on <%= @formatted_start %>
-        </li>
-        <li>
-          Ending on <%= @formatted_end %>
-        </li>
-      </ul>
-    </div>
-    <div class="moment-user-img">
-      <%= link_to user_path(@moment.user) do %>
-        <% if @moment.user.photo.file.nil?%>
-          <%= image_tag "avatar-baf.png", height: 100, width: 100, class: "img-circle" %>
-        <% else %>
-          <%= cl_image_tag @moment.user.photo, height: 100, width: 100, crop: :fill, class: "img-circle" %>
+<div class="container moment-container">
+  <div class="moment-main-info">
+    <div id="moment-category">
+      <%= image_tag "#{@moment.category.downcase}.jpg" %>
+      <div id="moment-user-img">
+        <%= link_to user_path(@moment.user) do %>
+          <% if @moment.user.photo.file.nil?%>
+            <%= image_tag "avatar-baf.png", height: 120, width: 120, class: "img-circle" %>
+          <% else %>
+            <%= cl_image_tag @moment.user.photo, height: 120, width: 120, crop: :fill, class: "img-circle" %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-  </div>
-  <div class="container">
-    <div class="nav-buttons-show">
-      <%= link_to 'Bookings', moment_bookings_path(@moment), class: 'btn btn-success' %>
-      <% if @moment.user == current_user %>
-        <%= link_to 'Edit Moment', edit_moment_path, :class => 'btn btn-primary' %>
-        <%= link_to 'Delete this moment', moment_path, method: :delete, class: 'btn btn-danger' %>
-      <% end %>
-    </div>
-
-    <div>
-      <ul>
+      </div>
+      <div id="moment-user-participants">
+        <h3>Participants</h3>
         <% @bookings.each do |booking| %>
-         <li><%= booking.user.username %></li>
+          <%= link_to user_path(booking.user) do %>
+            <div class="one-booking"><%= cl_image_tag booking.user.photo, height: 60, width: 60, crop: :fill, class: "img-circle" %></div>
+          <% end %>
         <% end %>
-      </ul>
+      </div>
     </div>
-
-    <% if @moment.user_id != current_user.id %>
-      <div class="container">
-        <div class="form-container">
-          <div class="form-content">
-
-            <h1>Join This Moment</h1>
-            <!-- <p>Find me in app/views/flats/new.html.erb</p> -->
-
-            <%= simple_form_for [@moment, @booking] do |f| %>
-              <%= f.input :description %>
-              <%= f.submit "Join", class: "btn btn-success" %>
-            <% end %>
+    <div id="moment-content">
+      <div id="moment-user-content">
+        <div id="moment-activity">
+          <h1><%= @moment.activity %></h1>
+        </div>
+        <div class="moment-user-insides" id="moment-description">
+          <%= @moment.description %>
+        </div>
+        <div class="moment-user-insides" id="moment-location">
+          <i class="fas fa-map-marker"></i> <%= @moment.location %>
+        </div>
+        <div class="moment-user-insides" id="moment-date">
+          <div id="moment-start">
+            Starting on <%= @formatted_start %>
+          </div>
+          <div id="moment-end">
+            Ending on <%= @formatted_end %>
           </div>
         </div>
       </div>
+
+    </div>
+  </div>
+
+</div>
+<div class="container">
+  <div class="nav-buttons-show">
+    <% if @moment.user == current_user %>
+      <%= link_to 'Edit Moment', edit_moment_path, :class => 'btn btn-primary' %>
+      <%= link_to 'Delete this moment', moment_path, method: :delete, class: 'btn btn-danger' %>
     <% end %>
   </div>
-</div>
 
+  <div>
+    <ul>
+
+    </ul>
+  </div>
+
+  <% if @moment.user_id != current_user.id %>
+    <div class="container">
+      <div class="form-container">
+        <div class="form-content">
+
+          <h1>Join This Moment</h1>
+          <!-- <p>Find me in app/views/flats/new.html.erb</p> -->
+
+          <%= simple_form_for [@moment, @booking] do |f| %>
+            <%= f.input :description %>
+            <%= f.submit "Join", class: "btn btn-success" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
