@@ -1,35 +1,50 @@
 <div class="container moment-container">
   <div class="moment-main-info">
     <div id="moment-category">
-      <%= image_tag "#{@moment.category.downcase}.jpg" %>
-      <div id="moment-user-img">
-        <%= link_to user_path(@moment.user) do %>
-          <% if @moment.user.photo.file.nil?%>
-            <%= image_tag "avatar-baf.png", height: 120, width: 120, class: "img-circle" %>
-          <% else %>
-            <%= cl_image_tag @moment.user.photo, height: 120, width: 120, crop: :fill, class: "img-circle" %>
+      <div id="img-img">
+        <%= image_tag "#{@moment.category.downcase}.jpg" %>
+        <div id="moment-user-img">
+          <%= link_to user_path(@moment.user) do %>
+            <% if @moment.user.photo.file.nil?%>
+              <%= image_tag "avatar-baf.png", height: 120, width: 120, class: "img-circle" %>
+            <% else %>
+              <%= cl_image_tag @moment.user.photo, height: 120, width: 120, crop: :fill, class: "img-circle" %>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
-      <div id="moment-user-participants">
-        <h3>Participants</h3>
-        <% @bookings.each do |booking| %>
-          <%= link_to user_path(booking.user) do %>
-            <div class="one-booking"><%= cl_image_tag booking.user.photo, height: 60, width: 60, crop: :fill, class: "img-circle" %></div>
+        </div>
+        <div id="moment-user-participants">
+          <h3>Participants</h3>
+          <% @bookings.each do |booking| %>
+            <%= link_to user_path(booking.user) do %>
+              <div class="one-booking"><%= cl_image_tag booking.user.photo, height: 60, width: 60, crop: :fill, class: "img-circle" %></div>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
+      <!-- Button trigger modal -->
+      <button type="button" id="img-join" data-toggle="modal" data-target="#joinModal">
+        Join this moment
+      </button>
     </div>
     <div id="moment-content">
       <div id="moment-user-content">
         <div id="moment-activity">
           <h1><%= @moment.activity %></h1>
         </div>
+        <div class="nav-buttons-show">
+          <% if @moment.user == current_user %>
+            <%= link_to 'Edit', edit_moment_path %>
+            <%= link_to 'Delete', moment_path, method: :delete %>
+          <% end %>
+        </div>
         <div class="moment-user-insides" id="moment-description">
           <%= @moment.description %>
         </div>
-        <div class="moment-user-insides" id="moment-location">
-          <i class="fas fa-map-marker"></i> <%= @moment.location %>
+        <div id="location-div">
+          <div class="moment-user-insides" id="moment-location">
+            <i class="fas fa-map-marker"></i> <%= @moment.location %>
+          </div>
+          <div id="map" style="width: 100%; height: 200px;" data-markers="<%= @markers.to_json %>"></div>
         </div>
         <div class="moment-user-insides" id="moment-date">
           <div id="moment-start">
@@ -44,37 +59,30 @@
   </div>
 </div>
 
-<!-- map -->
-<!-- <div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-></div> -->
+<!-- join modal -->
 
-
-<!-- buttons navigation -->
-<div class="nav-buttons-show">
-  <% if @moment.user == current_user %>
-    <%= link_to 'Edit Moment', edit_moment_path, :class => 'btn btn-primary' %>
-    <%= link_to 'Delete this moment', moment_path, method: :delete, class: 'btn btn-danger' %>
-  <% end %>
-</div>
-
-<!-- join -->
-<% if @moment.user_id != current_user.id %>
-  <div class="container">
-    <div class="form-container">
-      <div class="form-content">
-
-        <h1>Join This Moment</h1>
-        <!-- <p>Find me in app/views/flats/new.html.erb</p> -->
-
-        <%= simple_form_for [@moment, @booking] do |f| %>
-          <%= f.input :description %>
-          <%= f.submit "Join", class: "btn btn-success" %>
-        <% end %>
+<div class="modal fade" id="joinModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Join this moment</h4>
       </div>
+      <div class="modal-body">
+        <% if @moment.user_id != current_user.id %>
+          <div class="form-container">
+            <div class="form-content">
+              <%= simple_form_for [@moment, @booking] do |f| %>
+                <%= f.input :description, label: "Say something to #{@moment.user.first_name}" %>
+                <%= f.submit "Join", class: "btn btn-success" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
-<% end %>
+</div>
+
+
+
