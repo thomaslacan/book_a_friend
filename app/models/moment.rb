@@ -13,4 +13,11 @@ class Moment < ApplicationRecord
 
   geocoded_by :location
    after_validation :geocode, if: :will_save_change_to_location?
+
+   include PgSearch
+   pg_search_scope :search_by_activity_and_location,
+     against: [ :activity, :location, :category ],
+     using: {
+       tsearch: { prefix: true }
+     }
 end

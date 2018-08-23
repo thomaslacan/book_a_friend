@@ -2,11 +2,7 @@ class MomentsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
     if params[:query].present?
-        sql_query = " \
-        moments.location @@ :query \
-        OR moments.activity @@ :query \
-      "
-      @moments = Moment.where(sql_query, query: "%#{params[:query]}%")
+      @moments = Moment.search_by_activity_and_location(params[:query])
     else
       @moments = Moment.all
     end
@@ -24,7 +20,6 @@ class MomentsController < ApplicationController
     @markers = [{
         lat: @moment.latitude,
         lng: @moment.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }]
   end
 

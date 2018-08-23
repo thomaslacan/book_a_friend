@@ -1,13 +1,17 @@
 <div class="index-wrapper">
   <div class="container">
-    <h1>Discover all moments</h1>
-    <div class="card-container">
-      <div class="row">
-        <% @moments.each do |moment| %>
-          <%= render 'card', moment: moment %>
-        <% end %>
+    <% if @moments.count == 0 %>
+      <h3>no results</h3>
+    <% else %>
+    <h1>Discover all moments (<%= @moments.count %>)</h1>
+      <div class="card-container">
+        <div class="row">
+          <% @moments.each do |moment| %>
+            <%= render 'card', moment: moment %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
 
