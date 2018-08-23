@@ -10,6 +10,7 @@
   <div id="delete">
   <% if booking.user == current_user %>
     <%= link_to 'Delete Booking', moment_booking_path(booking.moment, booking), method: :delete %>
+    <%= link_to 'Details', moment_path(booking.moment) %>
   <% end %>
   </div>
 </div>
