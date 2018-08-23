@@ -1,18 +1,21 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(20,20,20,0.6) 0%, rgba(20,20,20,0.6) 50%), url('https://images.unsplash.com/photo-1478812954026-9c750f0e89fc?ixlib=rb-0.3.5&s=b4b6aeb97a8397ae5bbd039c3a731b5d&auto=format&fit=crop&w=2100&q=80');">
   <div class="banner-content">
     <h1>Book a friend to do whatever you want</h1>
+<div class="forms-search">
+    <%= form_tag moments_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Start now !"
+  %>
+  <%= button_tag "Search" , class: "btn btn-primary"%>
+
+<% end %>
 <!--     <p>Learn to code with us in Berlin</p>
     <a class="btn btn-primary btn-lg">Start now</a> -->
   </div>
 </div>
-
-<%= form_tag moments_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Search for location"
-  %>
-<% end %>
+</div>
 
 <div class="index-wrapper">
   <div class="container">
