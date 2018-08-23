@@ -30,13 +30,34 @@
   </div>
   <div class="container">
     <div class="nav-buttons-show">
-      <%= link_to 'Back to Moments List', moments_path, class: 'btn btn-info' %>
       <%= link_to 'Bookings', moment_bookings_path(@moment), class: 'btn btn-success' %>
-      <%= link_to 'Join This Moment', new_moment_booking_path(@moment), class: "btn btn-danger" %>
       <% if @moment.user == current_user %>
         <%= link_to 'Edit Moment', edit_moment_path, :class => 'btn btn-primary' %>
         <%= link_to 'Delete this moment', moment_path, method: :delete, class: 'btn btn-danger' %>
       <% end %>
+    </div>
+
+    <div>
+      <ul>
+        <% @bookings.each do |booking| %>
+         <li><%= booking.user.username %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="form-container">
+        <div class="form-content">
+
+          <h1>Join This Moment</h1>
+          <!-- <p>Find me in app/views/flats/new.html.erb</p> -->
+
+          <%= simple_form_for [@moment, @booking] do |f| %>
+            <%= f.input :description %>
+            <%= f.submit "Join", class: "btn btn-success" %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

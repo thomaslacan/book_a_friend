@@ -5,7 +5,9 @@ class MomentsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @moment = Moment.find(params[:id])
+    @bookings = Booking.where(moment_id: @moment.id)
     @formatted_start = DateTime.parse(@moment.start_time).strftime('%A %d %B at %H:%M')
     @formatted_end = DateTime.parse(@moment.end_time).strftime('%A %d %B at %H:%M')
   end
@@ -17,7 +19,6 @@ class MomentsController < ApplicationController
   def create
     @moment = Moment.new(moment_params)
     @moment.user = current_user
-    # @moment.photo = "#{@moment.category.downcase}.jpg"
     if @moment.save
       redirect_to moment_path(@moment)
     else
