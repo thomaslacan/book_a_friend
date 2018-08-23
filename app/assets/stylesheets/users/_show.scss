@@ -1,24 +1,64 @@
-.user-bio {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-.show-user-data {
-  padding: 20px 40px;
-  max-width: 600px;
+body {
   background-color: #fff;
 }
 
-.show-user-data ul {
+.data-file {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 900;
+  margin: 0;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0.7;
+  padding: 20px 0;
+}
+
+.user-profile {
+  max-width: 800px;
+}
+
+#user-data {
+  display: flex;
+  justify-content: flex-start;
+  font-weight: 200;
+  margin-top: 24px;
+}
+
+#edit-bio {
+  padding-left: 32px;
+}
+
+#edit-bio a {
+  text-decoration: none;
+  color: #000;
+  opacity: 0.3;
+}
+
+#edit-bio a:hover {
+  opacity: 1;
+  font-weight: 400;
+  color: #1F70D3;
+}
+
+ul {
     list-style: none;
   }
 
 #show-username {
   font-size: 24px;
   font-weight: bold;
-  padding: 10px;
+}
+
+#user-description {
+  margin-top: 64px;
+  max-width: 560px;
 }

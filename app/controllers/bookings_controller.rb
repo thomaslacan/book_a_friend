@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.moment = @moment
-    if Booking.where(user_id: current_user).empty? && @moment.user_id != current_user
+    if Booking.where(user_id: current_user, moment_id: @moment.id).empty? && @moment.user_id != current_user.id
       @booking.save
       redirect_to moment_path(@moment)
     else

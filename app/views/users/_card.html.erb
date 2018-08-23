@@ -1,0 +1,15 @@
+<div class="col-xs-12 col-sd-6 col-md-4 booking-card">
+  <div class="booking-content" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path "#{booking.moment.category.downcase}.jpg"%>); background-size: cover; border-radius: 4px; '>
+    <div id="booking-activity">
+      <%= booking.moment.activity %>
+    </div>
+    <div id="booking-location">
+      <i class="fas fa-map-marker"></i> <%= booking.moment.location %>
+    </div>
+  </div>
+  <div id="delete">
+  <% if booking.user == current_user %>
+    <%= link_to 'Delete Booking', moment_booking_path(booking.moment, booking), method: :delete %>
+  <% end %>
+  </div>
+</div>
