@@ -1,7 +1,15 @@
 class MomentsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
-    @moments = Moment.all
+    if params[:query].present?
+        sql_query = " \
+        moments.location @@ :query \
+        OR moments.activity @@ :query \
+      "
+      @moments = Moment.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @moments = Moment.all
+    end
   end
 
   def show
