@@ -40,51 +40,41 @@
           </div>
         </div>
       </div>
-
-
     </div>
-
-    <% end %>
-
-    <div
-      id="map"
-      style="width: 100%;
-      height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-    ></div>
-
-
   </div>
-
 </div>
-<div class="container">
-  <div class="nav-buttons-show">
-    <% if @moment.user == current_user %>
-      <%= link_to 'Edit Moment', edit_moment_path, :class => 'btn btn-primary' %>
-      <%= link_to 'Delete this moment', moment_path, method: :delete, class: 'btn btn-danger' %>
-    <% end %>
-  </div>
 
-  <div>
-    <ul>
+<!-- map -->
+<!-- <div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div> -->
 
-    </ul>
-  </div>
 
-  <% if @moment.user_id != current_user.id %>
-    <div class="container">
-      <div class="form-container">
-        <div class="form-content">
-
-          <h1>Join This Moment</h1>
-          <!-- <p>Find me in app/views/flats/new.html.erb</p> -->
-
-          <%= simple_form_for [@moment, @booking] do |f| %>
-            <%= f.input :description %>
-            <%= f.submit "Join", class: "btn btn-success" %>
-          <% end %>
-        </div>
-      </div>
-    </div>
+<!-- buttons navigation -->
+<div class="nav-buttons-show">
+  <% if @moment.user == current_user %>
+    <%= link_to 'Edit Moment', edit_moment_path, :class => 'btn btn-primary' %>
+    <%= link_to 'Delete this moment', moment_path, method: :delete, class: 'btn btn-danger' %>
   <% end %>
 </div>
+
+<!-- join -->
+<% if @moment.user_id != current_user.id %>
+  <div class="container">
+    <div class="form-container">
+      <div class="form-content">
+
+        <h1>Join This Moment</h1>
+        <!-- <p>Find me in app/views/flats/new.html.erb</p> -->
+
+        <%= simple_form_for [@moment, @booking] do |f| %>
+          <%= f.input :description %>
+          <%= f.submit "Join", class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
