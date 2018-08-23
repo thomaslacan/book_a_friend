@@ -10,6 +10,14 @@ class MomentsController < ApplicationController
     @bookings = Booking.where(moment_id: @moment.id)
     @formatted_start = DateTime.parse(@moment.start_time).strftime('%A %d %B at %H:%M')
     @formatted_end = DateTime.parse(@moment.end_time).strftime('%A %d %B at %H:%M')
+
+    @moments = Moment.where.not(latitude: nil, longitude: nil)
+
+    @markers = [{
+        lat: @moment.latitude,
+        lng: @moment.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }]
   end
 
   def new
