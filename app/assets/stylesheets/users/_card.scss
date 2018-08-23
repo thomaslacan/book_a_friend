@@ -1,0 +1,38 @@
+.booking-card {
+  margin-right: 20px;
+  padding: 0;
+  height: 200px;
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-content {
+  height: 160px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+#booking-activity {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+#delete {
+  padding: 10px;
+}
+
+#delete a {
+  text-decoration: none;
+  color: #000;
+  opacity: 0.3;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+#delete a:hover {
+  opacity: 1;
+}
