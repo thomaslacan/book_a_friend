@@ -70,6 +70,7 @@
 
 #moment-content {
   width: 560px;
+  position: relative;
 }
 
 .moment-user-insides {
@@ -85,6 +86,10 @@
   max-width: 400px;
 }
 
+#location-div {
+  margin-top: 80px;
+}
+
 #moment-location {
   color: #1F70D3;
   opacity: 0.7;
@@ -92,6 +97,15 @@
   padding: 5px 0;
   border-radius: 5px;
   font-size: 24px;
+}
+
+#moment-location a {
+  text-decoration: none;
+}
+
+#map {
+  position: absolute;
+  left: 0;
 }
 
 #moment-date {
@@ -102,12 +116,23 @@
 }
 
 #countdown {
-  background-color: rgb(93, 180, 152);
   padding: 5px 10px;
-  color: white;
-  font-weight: bolder;
-  border-radius: 3px;
+  color: #f30e5c;
+  font-size: 32px;
+  font-weight: 700;
+  border-radius: 10px;
   width: 150px;
+  height: 150px;
+  border: 2px solid #f30e5c;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#countdown:first-child {
+  display: block;
 }
 
 .nav-buttons-show a {
@@ -136,12 +161,11 @@
   border-radius: 25px;
 }
 
-.moment-messages hr {
-  width: 90%;
-}
-
-.moment-messages h4 {
-  padding: 10px 20px 0px 20px;
+.moment-messages h4, #map-contain h4 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 300;
+  padding: 30px 0;
 }
 
 .one-message {
@@ -168,3 +192,7 @@
   font-weight: 700;
 }
 
+.full-width-end {
+  width: 70vw;
+  margin: 50px auto;
+}

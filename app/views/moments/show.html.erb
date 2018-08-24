@@ -1,5 +1,7 @@
 <div class="container moment-container">
   <div class="moment-main-info">
+
+    <!-- left column images + join button -->
     <div id="moment-category">
       <div id="img-img">
         <%= image_tag "#{@moment.category.downcase}.jpg" %>
@@ -27,26 +29,34 @@
           Join this moment
         </button>
       <% end %>
-      <div class="moment-messages">
-        <h4>Check who's in</h4>
-        <hr>
-        <% @moment.bookings.each do |booking| %>
-          <div class="one-message">
-            <span class="booking-description"><%= booking.description %></span> - <span class="booking-user"><%= booking.user.first_name %></span>
-          </div>
-        <% end %>
-      </div>
     </div>
+
+    <!-- right column = basic infos -->
     <div id="moment-content">
       <div id="moment-user-content">
         <div id="moment-activity">
           <h1><%= @moment.activity %></h1>
+        </div>
+        <div id="countdown">
+            <% countdown = (@moment.start_time.to_date - Date.today).to_i %>
+            <% if countdown == 0 %>
+              Today
+            <% elsif countdown == 1 %>
+              Starts in <%= countdown %> day
+            <% else %>
+              Starts in <%= countdown %> days
+            <% end %>
         </div>
         <div class="nav-buttons-show">
           <% if @moment.user == current_user %>
             <%= link_to 'Edit', edit_moment_path %>
             <%= link_to 'Delete', moment_path, method: :delete %>
           <% end %>
+        </div>
+        <div class="moment-user-insides" id="moment-date">
+          <div id="moment-start">
+            <%= @formatted_start %> - <%= @formatted_end %>
+          </div>
         </div>
         <div class="moment-user-insides" id="moment-description">
           <%= @moment.description %>
@@ -55,30 +65,28 @@
           <div class="moment-user-insides" id="moment-location">
             <i class="fas fa-map-marker"></i> <%= @moment.location %>
           </div>
-          <div id="map" style="width: 400px; height: 200px;" data-markers="<%= @markers.to_json %>"></div>
-        </div>
-        <div class="moment-user-insides" id="moment-date">
-          <div id="moment-start">
-            Starting on <%= @formatted_start %>
-          </div>
-          <div id="moment-end">
-            Ending on <%= @formatted_end %>
-          </div>
-          <div id="countdown">
-            <% countdown = (@moment.start_time.to_date - Date.today).to_i %>
-            <% if countdown == 0 %>
-              Today
-            <% elsif countdown == 1 %>
-              Start in <%= countdown %> day
-            <% else %>
-              Start in <%= countdown %> days
-            <% end %>
-          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- full width end of page -->
+  <div class="full-width-end">
+    <div class="moment-messages">
+      <h4>Check who's in</h4>
+      <% @moment.bookings.each do |booking| %>
+        <div class="one-message">
+          <span><%= cl_image_tag booking.user.photo, height: 60, width: 60, crop: :fill, class: "img-circle" %></span><span class="booking-description"><%= booking.description %></span> - <span class="booking-user"><%= booking.user.first_name %></span>
+        </div>
+      <% end %>
+    </div>
+    <div id="map-contain">
+      <h4>Where is it?</h4>
+      <div id="map" style="width: 100vw; height: 520px;" data-markers="<%= @markers.to_json %>"></div>
+    </div>
+  </div>
 </div>
+
 
 <!-- join modal -->
 
