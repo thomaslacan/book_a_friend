@@ -6,6 +6,14 @@ class MomentsController < ApplicationController
     else
       @moments = Moment.all
     end
+
+    @markers = @moments.map do |moment|
+      {
+        lat: moment.latitude,
+        lng: moment.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def show
