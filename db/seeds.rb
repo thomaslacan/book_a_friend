@@ -1,4 +1,5 @@
 
+User.destroy_all
 
 user1 = User.new(username: "alberror", first_name: "Antoine", last_name: "Duvauchelle", email: "alberror@gmail.com", password: "mdpmdp", description: "Je suis super content d'être là, j'ai envie de me faire plein d'amis et de participer à des milliers d'activités parce que mes amis actuels sont des cons.", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1534943774/yiqzxkbceyioxzdaazoq.jpg", rating: 5)
 user1.save
@@ -21,7 +22,7 @@ user7.save
 
 
 
-
+Moment.destroy_all
 
 moment2 = Moment.new(category: 'Drink', activity: 'Test this new bar ! ', user: user3, description: " I'm in Amsterdam this friday and i want to test this new bar in the red light district ! Some young women interested? (not you brigitte) ", location: 'Oudezijds Voorburgwal 132, 1012 GH Amsterdam, Pays-Bas', level: 'Hell', start_time: '24.08.2018 17:00', end_time: '25.08.2018 14:00')
 moment2.save!
