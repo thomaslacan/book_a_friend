@@ -38,22 +38,29 @@
 
     <!-- activities involved -->
     <div class="row">
-      <h2>My next bookings</h2>
+      <h2>Next events for <%= @user.first_name %></h2>
         <% @bookings.each do |booking| %>
           <%= render 'card', booking: booking %>
         <% end %>
     </div>
 
-    <!-- activities involved -->
+    <!-- my moments -->
     <div class="row">
-      <h2>My next moments</h2>
+      <h2>Next moments organized by <%= @user.first_name %></h2>
       <% current_user.moments.each do |moment| %>
-        <div class="col-xs-12 col-sd-6 col-md-4 my-moments-card">
-          <%= moment.description %>
-        </div>
-
-
+        <%= link_to moment_path(moment) do %>
+          <div class="col-xs-12 col-sd-6 col-md-4 my-moments-card">
+            <div class="moment-content" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path "#{moment.category.downcase}.jpg"%>); background-size: cover; border-radius: 4px; '>
+              <div id="moment-activity">
+                <%= moment.activity %>
+              </div>
+              <div id="moment-location">
+                <i class="fas fa-map-marker"></i> <%= moment.location %>
+              </div>
+            </div>
+          </div>
         <% end %>
+      <% end %>
     </div>
   </div>
 </div>
