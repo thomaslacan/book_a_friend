@@ -11,7 +11,7 @@
 }
 
 .form-content {
-  width: 30vw;
+  width: 40vw;
   padding: 30px;
   background-color: #fff;
   border-radius: 5px;
@@ -26,6 +26,12 @@
 .form-layout-container {
   display: flex;
   justify-content: center;
+}
+
+.group-times {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 .photo-background {
