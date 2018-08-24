@@ -50,6 +50,10 @@
           <div id="countdown">
             <p>Starts in <%= countdown %> day</p>
           </div>
+        <% elsif countdown > 3 %>
+          <div id="countdown-cool">
+            <p>Starts in <%= countdown %> days</p>
+          </div>
         <% else %>
           <div id="countdown">
             <p>Starts in <%= countdown %> days</p>

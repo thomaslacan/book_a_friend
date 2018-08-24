@@ -54,6 +54,22 @@
   right: 0;
 }
 
+#countdown-cool {
+  padding: 5px 10px;
+  color: #166dd6;
+  font-size: 32px;
+  font-weight: 700;
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  border: 2px solid #166dd6;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 #img-img>img {
   width: 450px;
   height: 300px;
