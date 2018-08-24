@@ -47,7 +47,7 @@
     <!-- my moments -->
     <div class="row">
       <h2>Next moments organized by <%= @user.first_name %></h2>
-      <% current_user.moments.each do |moment| %>
+      <% @user.moments.each do |moment| %>
         <%= link_to moment_path(moment) do %>
           <div class="col-xs-12 col-sd-6 col-md-4 my-moments-card">
             <div class="moment-content" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path "#{moment.category.downcase}.jpg"%>); background-size: cover; border-radius: 4px; '>
