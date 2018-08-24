@@ -37,16 +37,24 @@
         <div id="moment-activity">
           <h1><%= @moment.activity %></h1>
         </div>
-        <div id="countdown">
-            <% countdown = (@moment.start_time.to_date - Date.today).to_i %>
-            <% if countdown == 0 %>
-                That's today!
-            <% elsif countdown == 1 %>
-              Starts in <%= countdown %> day
-            <% else %>
-              Starts in <%= countdown %> days
-            <% end %>
-        </div>
+        <% countdown = (@moment.start_time.to_date - Date.today).to_i %>
+        <% if countdown < 0 %>
+          <div id="countdown-expired">
+            <p id="expired">Too late, sorry!</p>
+          </div>
+        <% elsif countdown == 0 %>
+          <div id="countdown">
+            <p>That's today!</p>
+          </div>
+        <% elsif countdown == 1 %>
+          <div id="countdown">
+            <p>Starts in <%= countdown %> day</p>
+          </div>
+        <% else %>
+          <div id="countdown">
+            <p>Starts in <%= countdown %> days</p>
+          </div>
+        <% end %>
         <div class="nav-buttons-show">
           <% if @moment.user == current_user %>
             <%= link_to 'Edit', edit_moment_path %>
