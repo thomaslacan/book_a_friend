@@ -62,3 +62,33 @@ ul {
   margin-top: 64px;
   max-width: 560px;
 }
+
+.my-moments-card {
+  margin-right: 20px;
+  margin-top: 10px;
+  padding: 0;
+  height: 200px;
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.moment-content {
+  height: 160px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+#moment-activity {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+#moment-location {
+  color: #fff!important;
+  font-size: 18px!important;
+  opacity: 1!important;
+}
