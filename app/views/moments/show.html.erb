@@ -38,7 +38,14 @@
           <h1><%= @moment.activity %></h1>
         </div>
         <div id="countdown">
-            Starts in <%= (@moment.start_time.to_date - Date.today).to_i %> days
+            <% countdown = (@moment.start_time.to_date - Date.today).to_i %>
+            <% if countdown == 0 %>
+              Today
+            <% elsif countdown == 1 %>
+              Starts in <%= countdown %> day
+            <% else %>
+              Starts in <%= countdown %> days
+            <% end %>
         </div>
         <div class="nav-buttons-show">
           <% if @moment.user == current_user %>
@@ -56,7 +63,7 @@
         </div>
         <div id="location-div">
           <div class="moment-user-insides" id="moment-location">
-            <a href="#map-contain"><i class="fas fa-map-marker"></i> <%= @moment.location %></a>
+            <i class="fas fa-map-marker"></i> <%= @moment.location %>
           </div>
         </div>
       </div>
