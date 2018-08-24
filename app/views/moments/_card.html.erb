@@ -15,7 +15,7 @@
             <li>Location: <%= moment.location %></li>
           </ul>
         </div>
-        <div class="card-avatar"><%= cl_image_tag(moment.user.photo, :width => 60, :height => 60, class: 'img-circle') %></div>
+        <div class="card-avatar"><%= cl_image_tag(moment.user.photo, :width => 60, :height => 60, crop: 'fill', class: 'img-circle') %></div>
        </div>
       </div>
     </div>
