@@ -64,6 +64,9 @@
           <div id="moment-end">
             Ending on <%= @formatted_end %>
           </div>
+          <div id="countdown">
+            Start in <%= (@moment.start_time.to_date - Date.today).to_i %> days
+          </div>
         </div>
       </div>
     </div>
