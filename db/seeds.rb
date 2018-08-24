@@ -51,10 +51,10 @@ moment8.save!
 moment9 = Moment.new(category: 'Sport', activity: 'Tennis match', user: user4, description: " Search 1 people to join me for a tennis match ", location: "Church Rd, Wimbledon, London SW19 5AG, Royaume-Uni", level: 'Hard', start_time: '12.11.2018 18:00', end_time: '12.11.2018 20:00')
 moment9.save!
 
-moment6 = Moment.new(category: 'Exhibition', activity: 'Visit cougar museum', user: user5, description: " I'd love to see the cougar museum with someone.. Interested? ", location: "Cougar Mountain, Bellevue, Washington, États-Unis", level: 'Beginenr', start_time: '06.12.2018 14:00', end_time: '06.12.2018 19:00')
+moment6 = Moment.new(category: 'Exhibition', activity: 'Visit cougar museum', user: user5, description: " I'd love to see the cougar museum with someone.. Interested? ", location: "Cougar Mountain, Bellevue, Washington, États-Unis", level: 'Beginner', start_time: '06.12.2018 14:00', end_time: '06.12.2018 19:00')
 moment6.save!
 
-moment11 = Moment.new(category: 'Travel', activity: 'Travel to Tokyo', user: user5, description: " I'd love to discover this country  ", location: "2 Chome-12-１０ Kabukichō, Shinjuku-ku, Tōkyō-to 160-0021, Japon", level: 'Beginenr', start_time: '01.01.2019 11:00', end_time: '05.01.2019 19:00')
+moment11 = Moment.new(category: 'Travel', activity: 'Travel to Tokyo', user: user5, description: " I'd love to discover this country  ", location: "2 Chome-12-１０ Kabukichō, Shinjuku-ku, Tōkyō-to 160-0021, Japon", level: 'Beginner', start_time: '01.01.2019 11:00', end_time: '05.01.2019 19:00')
 moment6.save!
 
 
