@@ -40,7 +40,7 @@
         <div id="countdown">
             <% countdown = (@moment.start_time.to_date - Date.today).to_i %>
             <% if countdown == 0 %>
-              Today
+                That's today!
             <% elsif countdown == 1 %>
               Starts in <%= countdown %> day
             <% else %>
@@ -63,7 +63,7 @@
         </div>
         <div id="location-div">
           <div class="moment-user-insides" id="moment-location">
-            <i class="fas fa-map-marker"></i> <%= @moment.location %>
+            <a href="#map-contain"><i class="fas fa-map-marker"></i> <%= @moment.location %></a>
           </div>
         </div>
       </div>
