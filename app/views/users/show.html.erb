@@ -47,8 +47,12 @@
     <!-- activities involved -->
     <div class="row">
       <h2>My next moments</h2>
-        <% current_user.moments.each do |moment| %>
-          <%= moment %>
+      <% current_user.moments.each do |moment| %>
+        <div class="col-xs-12 col-sd-6 col-md-4 my-moments-card">
+          <%= moment.description %>
+        </div>
+
+
         <% end %>
     </div>
   </div>
