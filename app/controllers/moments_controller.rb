@@ -12,8 +12,8 @@ class MomentsController < ApplicationController
     @booking = Booking.new
     @moment = Moment.find(params[:id])
     @bookings = Booking.where(moment_id: @moment.id)
-    @formatted_start = DateTime.parse(@moment.start_time).strftime('%A %d %B at %H:%M')
-    @formatted_end = DateTime.parse(@moment.end_time).strftime('%A %d %B at %H:%M')
+    @formatted_start = DateTime.parse(@moment.start_time).strftime('%d %b at %H:%M')
+    @formatted_end = DateTime.parse(@moment.end_time).strftime('%d %b at %H:%M')
 
     @moments = Moment.where.not(latitude: nil, longitude: nil)
 
