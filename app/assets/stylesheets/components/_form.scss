@@ -11,13 +11,14 @@
 }
 
 .form-content {
+  width: 30vw;
   padding: 30px;
   background-color: #fff;
   border-radius: 5px;
 }
 
 .form-control {
-  height: 30px!important;
+  height: 40px!important;
   width: 100%!important;
   margin: 10px auto!important;
 }
@@ -37,4 +38,18 @@
 .form-container-new {
   padding-top: 30px;
   opacity: 0.9;
+}
+
+.form-btn {
+  padding-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-btn .btn-primary {
+  margin-right: 5px;
+}
+.form-btn .btn-info {
+  margin-left: 5px;
 }
