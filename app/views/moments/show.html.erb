@@ -69,7 +69,7 @@
       <h4>Check who's in</h4>
       <% @moment.bookings.each do |booking| %>
         <div class="one-message">
-          <span class="booking-description"><%= booking.description %></span> - <span class="booking-user"><%= booking.user.first_name %></span>
+          <span><%= cl_image_tag booking.user.photo, height: 60, width: 60, crop: :fill, class: "img-circle" %></span><span class="booking-description"><%= booking.description %></span> - <span class="booking-user"><%= booking.user.first_name %></span>
         </div>
       <% end %>
     </div>
