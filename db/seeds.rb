@@ -45,10 +45,10 @@ moment11 = Moment.create!(category: 'Travel', activity: 'Travel to Tokyo', user:
 p Moment.all
 puts "je cree des bookings"
 
-booking1 = Booking.create!(user_id: user1.id,  moment_id: moment3.id,  description: "lorem ipsum",)
-booking2 = Booking.create!(user_id: user1.id,  moment_id: moment9.id,  description: "lorem ipsum",)
-booking3 = Booking.create!(user_id: user1.id,  moment_id: moment6.id,  description: "lorem ipsum",)
-booking4 = Booking.create!(user_id: user5.id,  moment_id: moment1.id,  description: "lorem ipsum",)
-booking5 = Booking.create!(user_id: user5.id,  moment_id: moment2.id,  description: "lorem ipsum",)
-booking6 = Booking.create!(user_id: user5.id,  moment_id: moment4.id,  description: "lorem ipsum",)
+booking1 = Booking.create!(user_id: user1.id,  moment_id: moment3.id,  description: "Hello i'm in",)
+booking2 = Booking.create!(user_id: user1.id,  moment_id: moment9.id,  description: "all right cool",)
+booking3 = Booking.create!(user_id: user1.id,  moment_id: moment6.id,  description: "Yeah rocks",)
+booking4 = Booking.create!(user_id: user5.id,  moment_id: moment1.id,  description: "I'm in",)
+booking5 = Booking.create!(user_id: user5.id,  moment_id: moment2.id,  description: "Let's go",)
+booking6 = Booking.create!(user_id: user5.id,  moment_id: moment4.id,  description: "Top",)
 
