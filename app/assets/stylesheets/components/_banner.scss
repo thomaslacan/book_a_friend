@@ -11,20 +11,35 @@
   overflow: hidden;
   position: relative;
 }
-#main-title {
-  font-size: 50px;
-  font-weight: 100;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  position: absolute;
-  top: 25%;
-  left: 25%;
-}
+
 .banner p {
   font-size: 25px;
   font-weight: lighter;
   color: rgb(255, 255, 255);
   opacity: 0.6;
   margin-bottom: 30px;
+}
+
+/* banner elements layout */
+
+#banner-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#main-title {
+  font-size: 50px;
+  font-weight: 100;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+#form-form {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #form-start {
@@ -57,14 +72,6 @@
   margin-top: 50px;
 }
 
-#form-form {
-  margin-top: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .js-text {
   font-weight: 400;
 }
@@ -78,7 +85,7 @@
 }
 
 .js-text2 {
-  background-color: #FFED66;
+  background-color: #F5D547;
 }
 
 .js-text3 {
