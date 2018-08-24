@@ -9,11 +9,15 @@
   justify-content: center;
   height: calc(100vh - 70px);
   overflow: hidden;
+  position: relative;
 }
-.banner h1 {
+#main-title {
   font-size: 50px;
-  font-weight: lighter;
+  font-weight: 100;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 25%;
+  left: 25%;
 }
 .banner p {
   font-size: 25px;
@@ -59,4 +63,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.js-text {
+  font-weight: 400;
+}
+
+.js-text0 {
+  background-color: #0A369D;
+}
+
+.js-text1 {
+  background-color: #DB3069;
+}
+
+.js-text2 {
+  backgroud-color: #F5D547;
+}
+
+.js-text3 {
+  background-color: #7DDF64;
+}
+
+.js-text4 {
+  background-color: #28AFB0;
+}
+
+.js-text5 {
+  background-color: #DE9E36;
 }
